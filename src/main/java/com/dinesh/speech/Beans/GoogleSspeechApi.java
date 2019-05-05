@@ -1,5 +1,6 @@
 package com.dinesh.speech.Beans;
 
+import com.dinesh.speech.Constants;
 import com.google.cloud.speech.v1.*;
 import com.google.protobuf.ByteString;
 
@@ -16,10 +17,10 @@ public class GoogleSspeechApi {
     public String processSpeech(String filePath) throws Exception {
         System.out.println("Processing Speech now....");
        // System.out.println("File Path: " + filePath);
-        return syncRecognizeFile("/home/dinesh/Desktop/MyFile.wav");
+        return syncRecognizeFile(Constants.basePath + Constants.inputFile);
     }
 
-    
+
 
     public static String syncRecognizeFile(String fileName) throws Exception{
         String transcript = null;

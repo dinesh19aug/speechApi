@@ -1,5 +1,7 @@
 package com.dinesh.speech.processor;
 
+import com.dinesh.speech.Constants;
+
 import java.io.*;
 import java.util.Arrays;
 
@@ -19,8 +21,7 @@ public class AudioRespBuilder {
         Process p = pb.start();
         InputStream is = p.getInputStream();
 
-        FileOutputStream outputStream = new FileOutputStream(
-                "/home/dinesh/Desktop/reponse_tts.mp3");
+        FileOutputStream outputStream = new FileOutputStream(Constants.basePath + Constants.outputFile);
 
         BufferedInputStream bis = new BufferedInputStream(is);
         byte[] bytes = new byte[100];
